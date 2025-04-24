@@ -1,0 +1,26 @@
+{
+  "name": "alist-mcp-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "alist-mcp-server": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "~5.7.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "axios": "^1.8.4",
+    "zod": "^3.24.3"
+  }
+}
