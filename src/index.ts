@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { getUserInfo } from "./requests/auth.js";
+import { listFiles, ListFilesSchema } from "./requests/fs.js";
 
 const server = new McpServer({
   name: "alist-mcp-server",
@@ -11,23 +12,31 @@ const server = new McpServer({
   },
 });
 
-server.tool(
-  "getUserInfo",
-  "获取当前用户信息",
-  {},
-  async () => {
-    const info = await getUserInfo()
+server.tool("getUserInfo", "获取当前用户信息", {}, async () => {
+  const info = await getUserInfo();
 
-    return {
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(info, null, 2),
-        },
-      ],
-    };
-  },
-);
+  return {
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(info, null, 2),
+      },
+    ],
+  };
+});
+
+server.tool("listFiles", "列出文件目录", ListFilesSchema.shape, async (opt) => {
+  const files = await listFiles(opt);
+
+  return {
+    content: [
+      {
+        type: "text",
+        text: JSON.stringify(files, null, 2),
+      },
+    ],
+  };
+});
 
 async function main() {
   const transport = new StdioServerTransport();
