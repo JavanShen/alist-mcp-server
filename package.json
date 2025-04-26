@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "bin": {
-    "alist-mcp-server": "./dist/index.js"
+    "alist-mcp-server": "./build/index.js"
   },
   "files": [
-    "dist"
+    "build"
   ],
   "scripts": {
     "build": "tsc",
