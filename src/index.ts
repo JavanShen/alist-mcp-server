@@ -15,7 +15,7 @@ import {
 
 const server = new McpServer({
   name: "alist-mcp-server",
-  version: "1.0.0",
+  version: "0.0.1",
   capabilities: {
     resources: {},
     tools: {},

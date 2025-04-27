@@ -1,6 +1,6 @@
 {
   "name": "alist-mcp-server",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "bin": {
     "alist-mcp-server": "./build/index.js"
