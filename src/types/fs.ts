@@ -20,3 +20,21 @@ export const AlistFilesSchema = z.object({
   total: z.number(),
   write: z.boolean(),
 });
+
+export const PathInfoSchema = z.object({
+  created: z.string(),
+  hash_info: z.null(),
+  hashinfo: z.string(),
+  header: z.string(),
+  is_dir: z.boolean(),
+  modified: z.string(),
+  name: z.string(),
+  provider: z.string(),
+  raw_url: z.string(),
+  readme: z.string(),
+  related: z.null(),
+  sign: z.string(),
+  size: z.number(),
+  thumb: z.string(),
+  type: z.number(),
+});
