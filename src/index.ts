@@ -6,6 +6,10 @@ import {
   ListFilesSchema,
   getPathInfo,
   GetPathInfoSchema,
+  search,
+  SearchSchema,
+  mkdir,
+  MkdirSchema,
 } from "./requests/fs.js";
 
 const server = new McpServer({
@@ -60,6 +64,37 @@ server.tool(
     };
   },
 );
+
+server.tool(
+  "searchFiles",
+  "搜索文件或文件夹",
+  SearchSchema.shape,
+  async (opt) => {
+    const res = await search(opt);
+
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(res, null, 2),
+        },
+      ],
+    };
+  },
+);
+
+server.tool("mkdir", "创建目录", MkdirSchema.shape, async (opt) => {
+  await mkdir(opt);
+
+  return {
+    content: [
+      {
+        type: "text",
+        text: "创建目录成功",
+      },
+    ],
+  };
+});
 
 async function main() {
   const transport = new StdioServerTransport();

@@ -38,3 +38,16 @@ export const PathInfoSchema = z.object({
   thumb: z.string(),
   type: z.number(),
 });
+
+export const SearchResSchema = z.object({
+  content: z.array(
+    z.object({
+      is_dir: z.boolean(),
+      name: z.string(),
+      parent: z.string(),
+      size: z.number(),
+      type: z.number(),
+    }),
+  ),
+  total: z.number(),
+});
