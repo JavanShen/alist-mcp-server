@@ -14,9 +14,6 @@ importers:
       axios:
         specifier: ^1.8.4
         version: 1.8.4
-      dotenv-cli:
-        specifier: ^8.0.0
-        version: 8.0.0
       zod:
         specifier: ^3.24.3
         version: 3.24.3
@@ -24,6 +21,9 @@ importers:
       '@types/node':
         specifier: ^22.14.1
         version: 22.14.1
+      dotenv-cli:
+        specifier: ^8.0.0
+        version: 8.0.0
       typescript:
         specifier: ~5.7.2
         version: 5.7.3
