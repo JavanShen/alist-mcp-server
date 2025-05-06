@@ -241,19 +241,3 @@ export const ResApiFsFormSchema = z.object({
     }),
   }),
 });
-
-export const ReqApiFsPutSchema = z.string().base64();
-export const ResApiFsPutSchema = z.object({
-  code: z.number().int(),
-  message: z.string(),
-  data: z.object({
-    task: z.object({
-      id: z.string(),
-      name: z.string(),
-      state: z.number().int(),
-      status: z.string(),
-      progress: z.number().int(),
-      error: z.string(),
-    }),
-  }),
-});

@@ -29,8 +29,6 @@ import {
   ResApiFsAdd_offline_downloadSchema,
   ReqApiFsFormSchema,
   ResApiFsFormSchema,
-  ReqApiFsPutSchema,
-  ResApiFsPutSchema,
 } from "../types/fs.js";
 import { request } from "../utils/request.js";
 import { z } from "zod";
@@ -202,14 +200,4 @@ export const apiFsForm = async (opt: ReqApiFsFormSchemaOption) => {
     data: opt,
   });
   return ResApiFsFormSchema.parse(res);
-};
-
-export type ReqApiFsPutSchemaOption = z.infer<typeof ReqApiFsPutSchema>;
-export const apiFsPut = async (opt: ReqApiFsPutSchemaOption) => {
-  const res = await request({
-    url: "/api/fs/put",
-    method: "PUT",
-    data: opt,
-  });
-  return ResApiFsPutSchema.parse(res);
 };

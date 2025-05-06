@@ -12,7 +12,8 @@
     "build": "tsc",
     "prepare": "npm run build",
     "watch": "tsc --watch",
-    "inspect": "dotenv -e .env.local npx @modelcontextprotocol/inspector node build/index.js"
+    "inspect": "npm run build && dotenv -e .env.local npx @modelcontextprotocol/inspector node build/index.js",
+    "generate": "node scripts/generate.js"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
