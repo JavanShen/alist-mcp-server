@@ -12,12 +12,17 @@
     "build": "tsc",
     "prepare": "npm run build",
     "watch": "tsc --watch",
-    "inspect": "dotenv -e .env.local npx @modelcontextprotocol/inspector node build/index.js"
+    "inspect": "npm run build && dotenv -e .env.local npx @modelcontextprotocol/inspector node build/index.js",
+    "generate": "node scripts/generate.js"
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
-    "typescript": "~5.7.2",
-    "dotenv-cli": "^8.0.0"
+    "dotenv": "^16.5.0",
+    "dotenv-cli": "^8.0.0",
+    "json-schema-to-zod": "^2.6.1",
+    "lodash-es": "^4.17.21",
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.2"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
