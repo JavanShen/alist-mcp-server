@@ -5,9 +5,12 @@
 你需要提供Alist地址和Token
 #### 如何获取Token
 按F12打开“调试”，选中“网络”，随意在左侧选择请求，找到携带 `Authorization` 参数的就可以
-<img src="./image/token.png">
+
+<img width=240 src="./images/token.png">
+
 ### Using npm
-```JSON
+
+````JSON
 {
   "mcpServers": {
     "alistApi": {
@@ -20,4 +23,4 @@
     }
   }
 }
-```
+````
